@@ -54,7 +54,7 @@ const loginController=async function(req,res,next){
        let cookieOption={expies:new Date(Date.now())+5000,
        
         httpOnly: true,
-        SameSite: 'none',
+        sameSite: 'None',
         secure: true,}
        console.log(token);
         res.status(200).cookie("token",token,cookieOption)
