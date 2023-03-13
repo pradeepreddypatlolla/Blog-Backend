@@ -42,7 +42,7 @@ userSchema.methods.checkPassword=async function(password){
     return isMatched
 }
 userSchema.methods.generateToken=async function(){
-    return jwt.sign({_id:this._id},process.env.JWT_SECRET)
+    return jwt.sign({_id:this._id},process.env.JWT_SECRET,{expiresIn:'1d'})
 }
 const User=mongoose.model("User",userSchema)
 module.exports=User

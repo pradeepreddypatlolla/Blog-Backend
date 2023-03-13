@@ -58,7 +58,7 @@ const blogUpdateController=async(req,res,next)=>{
 }
 
 const blogDeleteController=async(req,res,next)=>{
-   
+   console.log("delete");
     try {
        
         let blogId=req.body.blogId

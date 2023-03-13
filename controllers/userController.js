@@ -51,17 +51,19 @@ const loginController=async function(req,res,next){
             })
         }
         let token=await user.generateToken();
-       let cookieOption={expies:new Date(Date.now())+5000,
+        console.log(token);
+    //    let cookieOption={expies:new Date(Date.now())+5000,
        
-        httpOnly: true,
-        sameSite: 'None',
-        secure: true,}
-       console.log(token);
-        res.status(200).cookie("token",token,cookieOption)
-        console.log(res.cookies);
+    //     httpOnly: true,
+    //     sameSite: 'None',
+    //     secure: true,}
+    //    console.log(token);
+    //     res.status(200).cookie("token",token,cookieOption)
+       // console.log(res.cookies);
         res.json({
             success:true,
-            user
+            user,
+            token
         })
 
       //  res.status(200).cookie("token",token,cookieOption).redirect('/blog/editor')

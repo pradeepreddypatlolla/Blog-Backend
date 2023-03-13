@@ -3,18 +3,16 @@ const User=require('../models/userModel')
 const isAuthorized=async function(req,res,next){
 
     try {
-        const {token}=req.cookies
-        console.log(req.cookies,process.env.JWT_SECRET);
+        let token=req.headers.Authorization || req.headers.authorization
+        token = token.split(' ')[1]
+        console.log(token);
         if(!token){
            // console.log(error)
            return res.status(500).json({
             success:false,
             message: "Please login first"
         })
-            // return res.status(400).json({
-            //     success:false,
-            //     message:"Please Login"
-            // })
+            
         }
 
         const decoded=await jwt.verify(token,process.env.JWT_SECRET)
