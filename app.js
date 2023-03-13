@@ -12,7 +12,7 @@ dbconnect()
 
 app.use(cors({
     credentials: true,
-    origin:['http://localhost:3000','https://blog-frontend-bl6t.onrender.com']
+    origin:['http://localhost:3000','https://blog-frontend-umjs.onrender.com']
 }))
 
 app.use(bodyParser.urlencoded({
